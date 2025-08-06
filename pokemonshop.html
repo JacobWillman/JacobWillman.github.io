@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Card Shop | Jacob Willman</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-black text-white">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-danger">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">Jacob Willman</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="experience.html">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <h1 class="text-center text-danger mb-4">Pokémon Card Shop</h1>
+        <p class="lead text-center mb-5">An Android app built in Unity that manages Pokémon card inventory using SQLite
+            and C#.</p>
+
+        <div class="text-center mb-5">
+            <video class="w-100 border border-danger rounded" controls>
+                <source src="videos/pokemoncards-video-final.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="px-3">
+            <h4 class="text-danger mt-5">Overview</h4>
+            <p>This Unity-based application allows users to browse, update, amd purchase Pokémon cards.
+                Designed for mobile Android devices, it combines a custom interface with persistent storage using
+                SQLite.</p>
+
+            <h4 class="text-danger mt-4">Tech Stack</h4>
+            <ul>
+                <li>Unity with C# scripting</li>
+                <li>SQLite for embedded database</li>
+                <li>Designed for Android deployment</li>
+            </ul>
+
+            <h4 class="text-danger mt-4">Features</h4>
+            <ul>
+                <li>Update cards - Name, Description, Price, Cost, Quantity</li>
+                <li>Visual card browser</li>
+                <li>Persistent storage using SQLite</li>
+                <li>Responsive UI optimized for mobile devices</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

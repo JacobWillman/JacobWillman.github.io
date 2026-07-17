@@ -1,9 +1,5 @@
-/* ==========================================================================
-   Design tokens
-   ========================================================================== */
 :root {
-    /* Brand red family — single source of truth (retires Bootstrap's #dc3545
-       and the stray literal "red" that used to clash with it) */
+    /* Brand red family */
     --brand-red: #AE3232;
     --brand-red-rgb: 174, 50, 50;
     --brand-red-dark: #802626;
@@ -86,7 +82,7 @@ a {
 }
 
 /* ==========================================================================
-   Bootstrap "danger" unification — one brand red everywhere
+   Bootstrap "danger"
    ========================================================================== */
 .text-danger {
     color: var(--brand-red) !important;
@@ -201,7 +197,7 @@ nav.navbar .nav-link.active::after {
     vertical-align: middle;
 }
 
-.btn {
+.icon-row .btn {
     width: 48px;
     height: 48px;
     padding: 0;
@@ -536,7 +532,7 @@ h2.display-6 {
 }
 
 @media (max-width: 576px) {
-    .btn {
+    .icon-row .btn {
         width: 42px;
         height: 42px;
     }

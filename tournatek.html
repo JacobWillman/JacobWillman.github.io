@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TournaTek Project | Jacob Willman</title>
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23060607'/%3E%3Ctext x='50' y='70' font-family='Arial, sans-serif' font-size='54' font-weight='700' fill='%23AE3232' text-anchor='middle'%3EJW%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-black text-white">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-danger">
+        <div class="container">
+            <a class="navbar-brand text-white" href="index.html">Jacob Willman</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <h1 class="text-center text-danger mb-4" data-aos="fade-up">TournaTek</h1>
+        <p class="lead text-center mb-5" data-aos="fade-up">A co-founded SaaS platform that runs fully automated Rocket
+            League tournaments — a Discord bot and web platform designed, built, and deployed single-handedly.
+        </p>
+        <div class="media-frame" data-aos="zoom-in">
+            <div id="tournatekCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+                <div class="carousel-inner rounded border border-danger">
+
+                    <div class="carousel-item active">
+                        <img src="images/tournatek-home.png" class="d-block w-100 no-hover"
+                            alt="TournaTek homepage — Run Flawless Rocket League Tournaments On Autopilot">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="images/tournatek-how-it-works.png" class="d-block w-100 no-hover"
+                            alt="TournaTek How It Works — tournaments that run themselves" loading="lazy">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="images/tournatek-features.png" class="d-block w-100 no-hover"
+                            alt="TournaTek Features — AI team balancing engine" loading="lazy">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="images/tournatek-leaderboard.png" class="d-block w-100 no-hover"
+                            alt="TournaTek player leaderboard with live rankings" loading="lazy">
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#tournatekCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#tournatekCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center gap-3 mt-3">
+            <a href="https://tournatek.com/" target="blank" class="btn btn-outline-danger btn-sm">
+                Visit TournaTek.com <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+        </div>
+        <p class="text-center text-secondary small mt-2">The codebase is proprietary, so the source is not publicly
+            available — the platform is live at the link above.</p>
+
+        <div class="px-3" data-aos="fade-up">
+            <h4 class="text-danger mt-5">Overview</h4>
+            <p>TournaTek is a live SaaS product that removes every ounce of manual admin work from running Rocket League
+                tournaments. An organizer runs a single slash command in their Discord server, and the bot handles the
+                entire lifecycle from there: player registration, check-in, team balancing, bracket generation, lobby
+                credential delivery, match reporting, and results — all the way until a champion is crowned.</p>
+            <p>The platform is in production today, serving multiple Discord communities with registered players and
+                completed tournaments. Alongside the bot, a companion website provides public player profiles, career
+                statistics, and server leaderboards, with rank data pulled from a Rocket League stats API.</p>
+            <p>I co-founded TournaTek and am its sole developer — every line of the bot, database, and website is
+                my work. This is my most ambitious project and the one with the most engineering behind it.</p>
+
+            <h4 class="text-danger mt-4">Tech Stack</h4>
+            <ul class="tech-badges">
+                <li>Python</li>
+                <li>discord.py</li>
+                <li>Flask</li>
+                <li>PostgreSQL (Neon)</li>
+                <li>Rocket League Stats API (integration)</li>
+                <li>Discord API</li>
+                <li>Render (cloud hosting)</li>
+            </ul>
+
+            <h4 class="text-danger mt-4">Features</h4>
+            <ul>
+                <li>Dual-mode AI team balancing — exhaustively evaluates every roster combination for small lobbies, and
+                    switches to an adaptive optimization algorithm when combinations run into the millions</li>
+                <li>Four bracket formats: single elimination, double elimination, round robin, and Swiss</li>
+                <li>Rank gates that restrict tournaments to specific competitive tiers</li>
+                <li>Crash-resilient by design — tournament state is persisted in PostgreSQL, so the bot survives
+                    restarts mid-tournament without losing data</li>
+                <li>Fully native Discord experience: live bracket embeds, one-click match reporting, instant lobby
+                    credentials, and self-cleaning channels</li>
+                <li>Career statistics, weighted MMR, and server leaderboards published to the web platform</li>
+            </ul>
+
+            <h4 class="text-danger mt-4">My Role</h4>
+            <ul>
+                <li>Co-founder — shaped the product vision, feature set, and roadmap</li>
+                <li>Sole developer of the entire stack: the discord.py bot, the PostgreSQL schema on Neon, the Flask
+                    web application, and the Rocket League stats API integration</li>
+                <li>Designed the tournament engine, including the team-balancing algorithms and crash-recovery model</li>
+                <li>Own deployment and operations end-to-end, hosting the platform on Render for real users in
+                    production</li>
+            </ul>
+        </div>
+
+        <div class="next-project text-center py-4" data-aos="fade-up">
+            <a href="cars2u.html" class="next-project-link">Next Project: Cars2U <i
+                    class="bi bi-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-white py-4 border-top border-danger">
+        <p>&copy; 2025 Jacob Willman. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

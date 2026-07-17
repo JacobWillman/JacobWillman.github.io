@@ -322,6 +322,43 @@ img[alt]:hover {
     display: block;
 }
 
+.featured-card {
+    position: relative;
+    border-width: 2px !important;
+    box-shadow: var(--shadow-red-glow);
+}
+
+.featured-card .card-img-top {
+    height: 340px;
+    object-position: top;
+}
+
+.featured-badge {
+    position: absolute;
+    top: .75rem;
+    left: .75rem;
+    z-index: 2;
+    background: var(--gradient-red);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: .72rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: .3rem .8rem;
+    border-radius: var(--radius-pill);
+    box-shadow: var(--shadow-sm);
+}
+
+.featured-badge i {
+    margin-right: .25rem;
+}
+
+@media (max-width: 576px) {
+    .featured-card .card-img-top {
+        height: 200px;
+    }
+}
+
 .carousel-item img {
     width: 100%;
     height: auto;

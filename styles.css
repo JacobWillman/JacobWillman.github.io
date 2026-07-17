@@ -1,25 +1,193 @@
+/* ==========================================================================
+   Design tokens
+   ========================================================================== */
+:root {
+    /* Brand red family — single source of truth (retires Bootstrap's #dc3545
+       and the stray literal "red" that used to clash with it) */
+    --brand-red: #AE3232;
+    --brand-red-rgb: 174, 50, 50;
+    --brand-red-dark: #802626;
+    --brand-red-bright: #d9605c;
+
+    /* Surfaces — layered near-black depth instead of flat #000 */
+    --bg-void: #060607;
+    --bg-surface: #101012;
+    --bg-surface-2: #17171a;
+    --bg-glass: rgba(255, 255, 255, 0.04);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-red: rgba(174, 50, 50, 0.45);
+
+    /* Text */
+    --text-primary: #f5f5f5;
+    --text-secondary: rgba(245, 245, 245, 0.72);
+    --text-muted: rgba(245, 245, 245, 0.52);
+
+    /* Radii */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-pill: 999px;
+
+    /* Shadows / glow */
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, .45);
+    --shadow-md: 0 14px 34px rgba(0, 0, 0, .5);
+    --shadow-red-glow: 0 0 24px rgba(174, 50, 50, .35);
+
+    /* Gradients */
+    --gradient-hero: radial-gradient(circle at 50% -10%, rgba(174, 50, 50, .28), transparent 60%),
+        linear-gradient(180deg, #0a0a0b 0%, #000 100%);
+    --gradient-red: linear-gradient(135deg, var(--brand-red), var(--brand-red-dark));
+    --gradient-border: linear-gradient(135deg, rgba(174, 50, 50, .6), rgba(174, 50, 50, 0));
+
+    /* Fonts */
+    --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+    --font-body: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+
+    /* Motion */
+    --ease-soft: cubic-bezier(.16, 1, .3, 1);
+    --dur-fast: .2s;
+    --dur-med: .4s;
+    --dur-slow: .8s;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
 body {
-    background-color: #000000;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-void);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+.navbar-brand,
+.display-1,
+.display-6 {
+    font-family: var(--font-display);
+}
+
+.resume-label,
+.tech-badges li,
+.card-title {
+    font-family: var(--font-mono);
 }
 
 a {
     text-decoration: none;
 }
 
+::selection {
+    background: var(--brand-red);
+    color: #fff;
+}
+
+/* ==========================================================================
+   Bootstrap "danger" unification — one brand red everywhere
+   ========================================================================== */
+.text-danger {
+    color: var(--brand-red) !important;
+}
+
+.border-danger {
+    border-color: var(--brand-red) !important;
+}
+
 .btn-danger {
-    background-color: #AE3232;
-    border-color: #AE3232;
+    --bs-btn-bg: var(--brand-red);
+    --bs-btn-border-color: var(--brand-red);
+    --bs-btn-hover-bg: var(--brand-red-dark);
+    --bs-btn-hover-border-color: var(--brand-red-dark);
+    --bs-btn-active-bg: var(--brand-red-dark);
+    --bs-btn-active-border-color: var(--brand-red-dark);
+    --bs-btn-disabled-bg: var(--brand-red);
+    --bs-btn-disabled-border-color: var(--brand-red);
 }
 
 .btn-danger:hover {
-    background-color: #802626;
-    border-color: #802626;
+    background-color: var(--brand-red-dark);
+    border-color: var(--brand-red-dark);
+}
+
+.btn-outline-danger {
+    --bs-btn-color: var(--brand-red);
+    --bs-btn-border-color: var(--brand-red);
+    --bs-btn-hover-bg: var(--brand-red);
+    --bs-btn-hover-border-color: var(--brand-red);
+    --bs-btn-active-bg: var(--brand-red-dark);
+    --bs-btn-active-border-color: var(--brand-red-dark);
+    --bs-btn-focus-shadow-rgb: var(--brand-red-rgb);
+    --bs-btn-disabled-color: var(--brand-red);
+    --bs-btn-disabled-border-color: var(--brand-red);
 }
 
 .highlight {
-    color: #AE3232;
+    color: var(--brand-red);
+}
+
+/* ==========================================================================
+   Nav
+   ========================================================================== */
+nav.navbar {
+    transition: background-color var(--dur-fast) ease, backdrop-filter var(--dur-fast) ease, box-shadow var(--dur-fast) ease;
+}
+
+nav.navbar.nav-scrolled {
+    background-color: rgba(6, 6, 7, 0.85) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
+}
+
+nav.navbar .nav-link {
+    position: relative;
+    transition: color var(--dur-fast) ease;
+}
+
+nav.navbar .nav-link.active {
+    color: var(--brand-red) !important;
+}
+
+nav.navbar .nav-link.active::after {
+    content: '';
+    position: absolute;
+    left: .5rem;
+    right: .5rem;
+    bottom: -2px;
+    height: 2px;
+    background: var(--brand-red);
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--gradient-hero);
+}
+
+.hero #hero-particles {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero>* {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1.display-1 {
+    background: linear-gradient(135deg, var(--text-primary) 45%, var(--brand-red-bright) 120%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .jump-text {
@@ -45,7 +213,7 @@ a {
 
 .resume-line {
     height: 2px;
-    background-color: #AE3232;
+    background-color: var(--brand-red);
     width: 80px;
 }
 
@@ -68,6 +236,16 @@ img[alt]:hover {
     transform: scale(1.2);
 }
 
+/* ==========================================================================
+   Section panels (Languages & Tools / Areas of Expertise)
+   ========================================================================== */
+.section-panel {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 1.5rem;
+}
+
 .icon-hover {
     transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
@@ -75,7 +253,7 @@ img[alt]:hover {
 .icon-hover:hover {
     transform: scale(1.15);
     filter: brightness(1.3);
-    box-shadow: 0 0 12px #AE3232, 0 0 24px #802626;
+    box-shadow: 0 0 12px var(--brand-red), 0 0 24px var(--brand-red-dark);
 }
 
 .no-hover:hover {
@@ -83,21 +261,50 @@ img[alt]:hover {
     filter: none !important;
 }
 
+.expertise-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-top: 2px solid var(--brand-red);
+    border-radius: var(--radius-md);
+    padding: 2rem 1.5rem;
+    height: 100%;
+    transition: transform var(--dur-fast) var(--ease-soft), box-shadow var(--dur-fast) var(--ease-soft), border-color var(--dur-fast) ease;
+}
+
+.expertise-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-red);
+}
+
+.expertise-card i {
+    font-size: 1.75rem;
+    color: var(--brand-red);
+    margin-bottom: .75rem;
+    display: inline-block;
+}
+
+/* ==========================================================================
+   Project cards
+   ========================================================================== */
 .card-img-top {
-    border: 2px solid red;
     height: 250px;
     object-fit: cover;
+    border: none;
+    border-top-left-radius: calc(var(--radius-md) - 1px);
+    border-top-right-radius: calc(var(--radius-md) - 1px);
 }
 
 .project-card {
     overflow: hidden;
+    border-radius: var(--radius-md);
     transition: transform .25s ease, box-shadow .25s ease;
     will-change: transform;
+    transform-style: preserve-3d;
 }
 
 .project-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, .18);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, .45), var(--shadow-red-glow);
 }
 
 .project-card .card-img-top,
@@ -131,17 +338,176 @@ video,
     max-width: 100%;
 }
 
-.btn-danger {
-    background-color: var(--brand-red);
+/* ==========================================================================
+   Tech badges / next project link
+   ========================================================================== */
+.tech-badges {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    padding-left: 0;
+}
+
+.tech-badges li {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-red);
+    border-radius: var(--radius-pill);
+    padding: .35rem 1rem;
+    font-size: .85rem;
+    color: var(--text-secondary);
+}
+
+.next-project {
+    border-top: 1px solid var(--border-subtle);
+    margin-top: 2rem;
+}
+
+.next-project-link {
+    color: var(--text-secondary);
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    transition: color var(--dur-fast) ease, letter-spacing var(--dur-fast) ease;
+}
+
+.next-project-link:hover {
+    color: var(--brand-red);
+    letter-spacing: .5px;
+}
+
+.next-project-link i {
+    margin-left: .35rem;
+    transition: transform var(--dur-fast) ease;
+}
+
+.next-project-link:hover i {
+    transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Contact card
+   ========================================================================== */
+.contact-card {
+    max-width: 560px;
+    width: 100%;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2.5rem;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem;
+    padding: .5rem 0;
+    color: var(--text-secondary);
+    transition: color var(--dur-fast) ease;
+}
+
+.contact-row a {
+    color: inherit;
+}
+
+.contact-row:hover {
+    color: var(--brand-red);
+}
+
+/* ==========================================================================
+   Scroll progress / back-to-top / custom cursor
+   ========================================================================== */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    z-index: 1050;
+    background: transparent;
+}
+
+.scroll-progress-bar {
+    height: 100%;
+    width: 100%;
+    background: var(--gradient-red);
+    transform-origin: left;
+    transform: scaleX(0);
+}
+
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--bg-surface-2);
+    border: 1px solid var(--border-red);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity var(--dur-fast) ease, transform var(--dur-fast) ease, box-shadow var(--dur-fast) ease;
+    z-index: 1040;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    box-shadow: var(--shadow-red-glow);
+}
+
+body.has-custom-cursor,
+body.has-custom-cursor a,
+body.has-custom-cursor button {
+    cursor: none;
+}
+
+.cursor-dot,
+.cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 2000;
+    border-radius: 50%;
+}
+
+.cursor-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--brand-red);
+    margin: -3px;
+}
+
+.cursor-ring {
+    width: 32px;
+    height: 32px;
+    margin: -16px;
+    border: 1px solid var(--border-red);
+    transition: width var(--dur-fast) ease, height var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+
+.cursor-ring.cursor-hover {
+    width: 48px;
+    height: 48px;
+    margin: -24px;
     border-color: var(--brand-red);
 }
 
-.btn-danger:hover {
-    background-color: #802626;
-    border-color: #802626;
-}
-
-
+/* ==========================================================================
+   Keyframes
+   ========================================================================== */
 @keyframes jump {
 
     0%,
@@ -158,10 +524,9 @@ video,
     }
 }
 
-:root {
-    --brand-red: #AE3232;
-}
-
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
 h1.display-1 {
     font-size: clamp(2rem, 8vw, 5rem);
 }
@@ -191,6 +556,10 @@ h2.display-6 {
     header.text-center {
         padding-top: 2.5rem;
         padding-bottom: 2.5rem;
+    }
+
+    .contact-card {
+        padding: 2.5rem 1.5rem;
     }
 }
 
@@ -261,5 +630,20 @@ h2.display-6 {
     .video-lg-600 {
         height: 600px;
         object-fit: cover;
+    }
+}
+
+/* ==========================================================================
+   Reduced motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+        scroll-behavior: auto !important;
     }
 }

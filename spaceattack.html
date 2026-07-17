@@ -5,7 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Attack | Jacob Willman</title>
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23060607'/%3E%3Ctext x='50' y='70' font-family='Arial, sans-serif' font-size='54' font-weight='700' fill='%23AE3232' text-anchor='middle'%3EJW%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -14,7 +23,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-danger">
         <div class="container">
-            <a class="navbar-brand text-white" href="#">Jacob Willman</a>
+            <a class="navbar-brand text-white" href="index.html">Jacob Willman</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,11 +38,11 @@
     </nav>
 
     <div class="container py-5">
-        <h1 class="text-center text-danger mb-4">Space Attack</h1>
-        <p class="lead text-center mb-5">A fast-paced Unity Android game where players blast asteroids, collect
-            powerups, and compete for high scores stored in SQLite.</p>
+        <h1 class="text-center text-danger mb-4" data-aos="fade-up">Space Attack</h1>
+        <p class="lead text-center mb-5" data-aos="fade-up">A fast-paced Unity Android game where players blast
+            asteroids, collect powerups, and compete for high scores stored in SQLite.</p>
 
-        <div class="text-center mb-5">
+        <div class="text-center mb-5" data-aos="zoom-in">
             <video class="w-100 border border-danger rounded" controls>
                 <source src="videos/Spaceattack-Video-Final.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -45,7 +54,7 @@
                 class="btn btn-outline-danger btn-sm">GitHub</a>
         </div>
 
-        <div class="px-3">
+        <div class="px-3" data-aos="fade-up">
             <h4 class="text-danger mt-5">Overview</h4>
             <p>Space Attack is an arcade-style 2D shooter developed in Unity for Android devices. Players control a
                 spaceship, shoot randomly generated asteroids of varying health, and collect helpful items like shields,
@@ -53,7 +62,7 @@
             </p>
 
             <h4 class="text-danger mt-4">Tech Stack</h4>
-            <ul>
+            <ul class="tech-badges">
                 <li>Unity (C# scripting)</li>
                 <li>SQLite for local high score tracking</li>
                 <li>Targeted for Android platform</li>
@@ -68,9 +77,22 @@
                 <li>Mobile-optimized user interface</li>
             </ul>
         </div>
+
+        <div class="next-project text-center py-4" data-aos="fade-up">
+            <a href="cars2u.html" class="next-project-link">Next Project: Cars2U <i
+                    class="bi bi-arrow-right"></i></a>
+        </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="text-center text-white py-4 border-top border-danger">
+        <p>&copy; 2025 Jacob Willman. All rights reserved.</p>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

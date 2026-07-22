@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ant Simulation | Jacob Willman</title>
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23060607'/%3E%3Ctext x='50' y='70' font-family='Arial, sans-serif' font-size='54' font-weight='700' fill='%23AE3232' text-anchor='middle'%3EJW%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-black text-white">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-danger">
+        <div class="container">
+            <a class="navbar-brand text-white" href="index.html">Jacob Willman</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <h1 class="text-center text-danger mb-4" data-aos="fade-up">Ant Simulation</h1>
+        <p class="lead text-center mb-5" data-aos="fade-up">A multithreaded Java simulation where a colony of ants
+            searches for food and lays down pheromone trails to find the shortest paths home.</p>
+
+        <div class="media-compact mb-5" data-aos="zoom-in">
+            <img src="images/antsimulation-demo.gif" class="w-100 border border-danger rounded"
+                alt="Ant Simulation Demo" loading="lazy">
+        </div>
+
+        <div class="d-flex justify-content-center gap-3 mt-3">
+            <a href="https://github.com/JakeWill1/AntSimulation" target="blank"
+                class="btn btn-outline-danger btn-sm">GitHub</a>
+        </div>
+
+        <div class="px-3" data-aos="fade-up">
+            <h4 class="text-danger mt-5">Overview</h4>
+            <p>This simulation models a colony of ants that leave their nest, search for food, and lay down pheromone
+                trails as they travel back and forth. As stronger trails build up over time, the ants gradually shift
+                from wandering randomly to following the best paths, so the colony ends up finding efficient routes to
+                food entirely on its own.</p>
+
+            <h4 class="text-danger mt-4">Tech Stack</h4>
+            <ul class="tech-badges">
+                <li>Java</li>
+                <li>Multithreaded simulation engine</li>
+                <li>Object-oriented entity/class design</li>
+            </ul>
+
+            <h4 class="text-danger mt-4">Features</h4>
+            <ul>
+                <li>Pheromone-trail pathfinding that emerges from ant behavior, not hardcoded routes</li>
+                <li>Worker and Scout ant types with distinct movement and trail-following logic</li>
+                <li>Simulation logic and rendering run on separate threads for smooth performance</li>
+                <li>Thread pool updates hundreds of ants concurrently</li>
+                <li>Shared world state is locked during updates/draws to keep threads in sync</li>
+            </ul>
+        </div>
+
+        <div class="next-project text-center py-4" data-aos="fade-up">
+            <a href="cars2u.html" class="next-project-link">Next Project: Cars2U <i
+                    class="bi bi-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-white py-4 border-top border-danger">
+        <p>&copy; 2025 Jacob Willman. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
